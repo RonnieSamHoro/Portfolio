@@ -27,7 +27,7 @@ const Hero = () => {
 
         <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 py-10 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
-            FULL STACK<br />WEB DEVELOPER
+            DIGITAL EXPERIENCE<br />DEVELOPER
           </h1>
           <p className="max-w-xl text-sm md:text-base font-light font-mono">
             Building smooth and modern web interfaces — blending design with code.
