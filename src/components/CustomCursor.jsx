@@ -18,7 +18,7 @@ const CustomCursor = () => {
     document.body.style.cursor = 'none';
 
     const updateCursor = () => {
-      const speed = 0.02; // tweak this value between 0.05 and 0.2 for more or less lag
+      const speed = 0.05; // tweak this value between 0.05 and 0.2 for more or less lag
       posX.current += (mouseX.current - posX.current) * speed;
       posY.current += (mouseY.current - posY.current) * speed;
 
