@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const CustomCursor = ({ darkMode }) => {
+const CustomCursor = () => {
   const cursorRef = useRef(null);
 
   const mouseX = useRef(0);
@@ -15,15 +15,15 @@ const CustomCursor = ({ darkMode }) => {
     };
 
     document.addEventListener('mousemove', handleMouseMove);
-    document.body.style.cursor = 'none'; // Hide default cursor
+    document.body.style.cursor = 'none';
 
     const updateCursor = () => {
-      // Lerp formula: newPos = oldPos + (targetPos - oldPos) * factor
-      posX.current += (mouseX.current - posX.current) * 0.1;
-      posY.current += (mouseY.current - posY.current) * 0.1;
+      const speed = 0.02; // tweak this value between 0.05 and 0.2 for more or less lag
+      posX.current += (mouseX.current - posX.current) * speed;
+      posY.current += (mouseY.current - posY.current) * speed;
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${posX.current - 12}px, ${posY.current - 12}px, 0)`;
+        cursorRef.current.style.transform = `translate3d(${posX.current - 10}px, ${posY.current - 10}px, 0)`;
       }
 
       requestAnimationFrame(updateCursor);
@@ -33,17 +33,17 @@ const CustomCursor = ({ darkMode }) => {
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      document.body.style.cursor = ''; // Reset cursor on unmount
+      document.body.style.cursor = '';
     };
   }, []);
 
   return (
     <div
       ref={cursorRef}
-      className={`fixed top-0 left-0 w-5 h-5 rounded-full z-[9999] pointer-events-none transition-colors duration-300 mix-blend-difference`}
-      style={{
-        backgroundColor: darkMode ? 'white' : 'black',
-      }}
+      className="fixed top-0 left-0 w-5 h-5 rounded-full z-[9999] pointer-events-none 
+        mix-blend-difference bg-white ring-1 ring-black dark:ring-white 
+        transition-[background-color,transform] duration-100 ease-out"
+      style={{ willChange: 'transform' }}
     />
   );
 };

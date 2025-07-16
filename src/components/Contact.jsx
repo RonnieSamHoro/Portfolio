@@ -13,9 +13,9 @@ const Contact = () => {
       </p>
 
       <ul className="space-y-2 font-mono text-sm text-gray-700 dark:text-gray-300 transition-colors duration-500">
-        <li>Email: <a href="mailto:your.email@example.com" className="underline">ronitsam.official@gamil.com</a></li>
-        <li>GitHub: <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">https://github.com/RonnieSamHoro</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">https://www.linkedin.com/in/ronit-sam-horo/</a></li>
+        <li>Email: <a href="mailto:ronitsam.official@gamil.com" className="underline">ronitsam.official@gamil.com</a></li>
+        <li>GitHub: <a href="https://github.com/RonnieSamHoro" target="_blank" rel="noopener noreferrer" className="underline">/RonnieSamHoro</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/ronit-sam-horo/" target="_blank" rel="noopener noreferrer" className="underline">/ronit-sam-horo</a></li>
       </ul>
     </section>
   );
